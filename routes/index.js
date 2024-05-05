@@ -10,7 +10,6 @@ router.get("/", function (req, res, next) {
 router.post("/sendData", function (req, res, next) {
   const { body } = req;
   const ip = req.header("x-forwarded-for");
-  console.log("la ip es: ", ip);
   const data = {
     body,
     ip,
