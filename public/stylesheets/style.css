@@ -8,70 +8,76 @@ body {
   color: black;
 }
 
-
-h1{
+h1 {
   margin-bottom: 5px;
   font-size: 60px;
 }
 
-.container-foto{
+.container-foto {
   padding-left: 267px;
 }
 
-a{
+a {
   margin: 16px;
   margin-top: 8px;
   color: black;
   text-decoration: none;
 }
 
-span{
+span {
   display: block;
 }
 
-li{
+li {
   list-style: none;
   margin-bottom: 3px;
 }
 
-ul{
+ul {
   padding: 0;
 }
-.cuadro{
+.cuadro {
   padding: 60px;
-  padding-top: 0 ;
-  padding-bottom: 0 ;
+  padding-top: 0;
+  padding-bottom: 0;
   height: 100vh;
   border-left: solid black;
   border-right: solid black;
 }
 
-h3{
+h3 {
   font-size: 18px;
   margin-bottom: 0px;
 }
 
-.foto{
+.foto {
   display: flex;
 }
 
-
-main{
- display: flex;
- flex-direction: column;
+main {
+  display: flex;
+  flex-direction: column;
 }
 
-article{
+article {
   max-inline-size: 80ch;
   text-wrap: balance;
 }
 
-img{
+img {
   width: 80px;
   height: 100px;
 }
 
-.container-anchor{
+.container-anchor {
   display: flex;
-  
+}
+
+.formulario {
+  display: flex;
+  justify-content: center;
+}
+
+label {
+  text-wrap: balance;
 }
