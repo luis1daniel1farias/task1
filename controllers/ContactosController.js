@@ -34,7 +34,7 @@ function getDateTime() {
   return today;
 }
 
-export default function ContactosController(data) {
+export default async function ContactosController(data) {
   const { nombre, email, comentario } = data.body;
   const ip = data.ip;
   const parsedData = { nombre, email, comentario, ip, fecha: getDateTime() };
@@ -42,6 +42,13 @@ export default function ContactosController(data) {
   //validar los datos (zod)
   const validatedData = validate(nombre, email, comentario, ip, getDateTime());
   if (validatedData.success.valueOf()) {
-    ContactosModels(parsedData);
+   await ContactosModels(parsedData);
   }
+
+  const statusResponse= {
+    success: validatedData.success.valueOf()
+  }
+
+
+  return statusResponse
 }

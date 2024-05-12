@@ -1,14 +1,17 @@
 body {
   display: flex;
+  gap: 30px;
   background-color: #e4e4e4fe;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
   justify-content: center;
   align-content: center;
   margin: 0;
   color: black;
+  box-sizing: border-box;
 }
 
 h1 {
+  margin-top: 0px   ;
   margin-bottom: 5px;
   font-size: 60px;
 }
@@ -37,12 +40,14 @@ ul {
   padding: 0;
 }
 .cuadro {
+  z-index: 30;
   padding: 60px;
   padding-top: 0;
   padding-bottom: 0;
   height: 100vh;
-  border-left: solid black;
-  border-right: solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  box-shadow: 3px 1px rgba(0, 0, 0, 0.228);
 }
 
 h3 {
@@ -75,9 +80,24 @@ img {
 
 .formulario {
   display: flex;
-  justify-content: center;
+  justify-content: end;
+  border: 1px solid black;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 7px;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.228);
+}
+
+li {
+  display: flex;
+  flex-direction: column;
 }
 
 label {
   text-wrap: balance;
+}
+
+.listForm {
+  display: flex;
+  flex-direction: column;
 }

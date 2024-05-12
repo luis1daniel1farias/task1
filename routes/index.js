@@ -1,21 +1,39 @@
-import { Router } from "express";
-import ContactosController from "../controllers/ContactosController.js";
-let router = Router();
+import { Router } from 'express'
+import ContactosController from '../controllers/ContactosController.js'
+let router = Router()
 
 /* GET home page. */
-router.get("/", function (req, res, next) {
-  res.render("curriculum", { title: "CV - Luis Farias" });
-});
+router.get('/', function (req, res, next) {
+  res.render('curriculum', { title: 'CV - Luis Farias' })
+})
 
-router.post("/sendData", function (req, res, next) {
-  const { body } = req;
-  const ip = req.header("x-forwarded-for");
+
+router.get('/confirm', function (req, res, next) {
+  res.render('confirmForm', { title: 'Datos Enviados' })
+})
+
+router.get('/error', function (req, res, next) {
+  res.render('error', { title: 'Datos Invalidos' })
+})
+
+
+
+router.post('/sendData', async function (req, res, next) {
+  const { body } = req
+  const ip = req.ip
   const data = {
     body,
     ip,
-  };
-  ContactosController(data);
-  res.redirect("/");
-});
+  }
+ const succesMessage =  await ContactosController(data)
 
-export default router;
+ if(!succesMessage.success){
+
+  res.redirect('/error')
+  return
+}
+
+  res.redirect('/confirm')
+})
+
+export default router

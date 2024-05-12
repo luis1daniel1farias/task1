@@ -1,21 +1,21 @@
 <script src="/javascripts/dataform.js"></script>
 
-<form class="formulario" id="form" action="sendData" method="post">
-  <ul>
+<form class="formulario form-group" id="form" action="sendData" method="post">
+  <ul class="listForm">
     <li>
       <label for="name">Nombre:</label>
-      <input type="text" id="name" name="nombre" />
+      <input type="text" id="name" name="nombre" required />
     </li>
     <li>
-      <label for="mail">Correo electrónico:</label>
-      <input type="text" id="mail" name="email" />
+      <label for="mail">Correo:</label>
+      <input type="email" id="mail" name="email" required />
     </li>
     <li>
       <label for="comentario">Mensaje:</label>
-      <textarea id="comentario" name="comentario"></textarea>
+      <textarea id="comentario" name="comentario" required></textarea>
     </li>
     <li>
-      <input type="submit" value="Enviar">
+      <input type="submit" class="btn btn-primary" value="Enviar" />
     </li>
   </ul>
 </form>
